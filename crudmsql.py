@@ -48,7 +48,8 @@ def atualizarAluno(id, nome,idade,peso):
 def deletarAluno(id):
     deletar = cursor.execute("DELETE FROM tb_alunos WHERE id=%s",(id,))
 
-criarAluno("NAYELLY ROBERT ADA SILVA PEREIRA", 49, 40.8)
-atualizarAluno(4, "JOSE ROBERTA DA SILVA PEREIRA", 55, 75.5)
-deletarAluno(9)
-listarAlunos()
+
+# criarAluno("NAYELLY ROBERT ADA SILVA PEREIRA", 49, 40.8)
+# atualizarAluno(4, "JOSE ROBERTA DA SILVA PEREIRA", 55, 75.5)
+# deletarAluno(9)
+# listarAlunos()
