@@ -26,14 +26,17 @@ def criarAluno(conexao,nome,idade,peso):
 
 
 
-def listagemAluno():
+def listagemAluno(conexao):
     Alunos = conexao.execute("SELECT * FROM tb_alunos").fetchall()
-    for aluno in Alunos:
-        print(aluno)
-def atualizarAluno(id,nome,idade,peso):
+    return Alunos
+
+
+def atualizarAluno(conexao,id,nome,idade,peso):
     Atualizar = conexao.execute("UPDATE tb_alunos SET nome=?,idade=?,peso=? WHERE id=?",(nome,idade,peso,id))
     conexao.commit()
     print("Aluno Aprovado com Sucesso!")
+    return Atualizar
+
 def deletarAluno(id):
     deletar = conexao.execute("DELETE FROM tb_alunos WHERE id=?",(id,))
     conexao.commit()
