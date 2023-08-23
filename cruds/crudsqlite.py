@@ -15,17 +15,10 @@ cursor.execute(f"CREATE TABLE IF NOT EXISTS {TABLE_NAME}"
                ')'
                )
 conexao.commit()
-
-
-
-def criarAluno(conexao,nome,idade,peso):
+def criarAluno(nome,idade,peso):
     novoAluno = conexao.execute ("INSERT INTO tb_alunos (nome,idade,peso) VALUES (?,?,?);",(nome,idade,peso))
     conexao.commit()
     print("Aluno cadastrado com sucesso!")
-    return novoAluno
-
-
-
 def listagemAluno():
     Alunos = conexao.execute("SELECT * FROM tb_alunos").fetchall()
     for aluno in Alunos:
