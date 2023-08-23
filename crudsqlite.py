@@ -20,6 +20,18 @@ def criarAluno(nome,idade,peso):
     conexao.commit()
     print("Aluno cadastrado com sucesso!")
 
+def listagemAluno():
+    Alunos = conexao.execute("SELECT * FROM tb_alunos").fetchall()
+    for aluno in Alunos:
+        print(aluno)
+
+
+listagemAluno()
+
+
+
+
+
 
 #criarAluno("Nayna Roberta da Silva Pereira", 35, 60.5)
 
