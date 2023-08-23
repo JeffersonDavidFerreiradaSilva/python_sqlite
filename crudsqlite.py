@@ -10,17 +10,18 @@ cursor.execute(f"CREATE TABLE IF NOT EXISTS {TABLE_NAME}"
                '('
                'id INTEGER PRIMARY KEY AUTOINCREMENT,'
                'nome TEXT NOT NULL,'
-               'idaed INTEGER NOT NULL,'
+               'idade INTEGER NOT NULL,'
                'peso REAL NOT NULL'
                ')'
                )
 conexao.commit()
-def criarAluno(nome,peso,idade):
-    novoAluno = ("INSERT INTO FROM tb_aluno (nome,idade,peso) VALUES (nome =?, idade=? peso=?);",(nome,peso,idade))
+def criarAluno(nome,idade,peso):
+    novoAluno = conexao.execute ("INSERT INTO tb_alunos (nome,idade,peso) VALUES (?,?,?);",(nome,idade,peso))
     conexao.commit()
     print("Aluno cadastrado com sucesso!")
 
 
+#criarAluno("Nayna Roberta da Silva Pereira", 35, 60.5)
 
 
 
